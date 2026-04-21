@@ -19,6 +19,7 @@ import { useSkillStore } from '../stores/skillStore'
 import { SkillList } from '../components/skills/SkillList'
 import { SkillDetail } from '../components/skills/SkillDetail'
 import { ComputerUseSettings } from './ComputerUseSettings'
+import { McpSettings } from './McpSettings'
 import { useUIStore, type SettingsTab } from '../stores/uiStore'
 import { ClaudeOfficialLogin } from '../components/settings/ClaudeOfficialLogin'
 import { useUpdateStore } from '../stores/updateStore'
@@ -45,6 +46,7 @@ export function Settings() {
             <TabButton icon="shield" label={t('settings.tab.permissions')} active={activeTab === 'permissions'} onClick={() => setActiveTab('permissions')} />
             <TabButton icon="tune" label={t('settings.tab.general')} active={activeTab === 'general'} onClick={() => setActiveTab('general')} />
             <TabButton icon="chat" label={t('settings.tab.adapters')} active={activeTab === 'adapters'} onClick={() => setActiveTab('adapters')} />
+            <TabButton icon="dns" label={t('settings.tab.mcp')} active={activeTab === 'mcp'} onClick={() => setActiveTab('mcp')} />
             <TabButton icon="smart_toy" label={t('settings.tab.agents')} active={activeTab === 'agents'} onClick={() => setActiveTab('agents')} />
             <TabButton icon="auto_awesome" label={t('settings.tab.skills')} active={activeTab === 'skills'} onClick={() => setActiveTab('skills')} />
             <TabButton icon="mouse" label={t('settings.tab.computerUse')} active={activeTab === 'computerUse'} onClick={() => setActiveTab('computerUse')} />
@@ -60,6 +62,7 @@ export function Settings() {
           {activeTab === 'permissions' && <PermissionSettings />}
           {activeTab === 'general' && <GeneralSettings />}
           {activeTab === 'adapters' && <AdapterSettings />}
+          {activeTab === 'mcp' && <McpSettings />}
           {activeTab === 'agents' && <AgentsSettings />}
           {activeTab === 'skills' && <SkillSettings />}
           {activeTab === 'computerUse' && <ComputerUseSettings />}
